@@ -1,0 +1,6 @@
+Django==1.9.1
+django-cors-headers==2.0.2
+djangorestframework==3.5.4
+requests==2.5.3
+tmdbsimple==1.5.0
+wheel==0.24.0

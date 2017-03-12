@@ -1,0 +1,37 @@
+<div  class="col-md-12" class="detail-view">
+    <div>
+        <button type="button" (click)="getBackToListView()" class="btn btn-primary pull-right" style="margin:20px">Back</button>
+    </div>
+    <div class="col-md-12 movie-title-panel">
+        <div class="col-md-3 movie-title">
+            <ul *ngFor="let movie of movieList" (click)="getMovieDetail(movie.id)">
+                <li style="cursor:pointer;">{{movie.title}}</li>
+                <hr>
+            </ul>
+        </div>
+        <div class="col-md-9 movie-detail-panel">
+            <div class="col-md-12">
+                <div class="col-md-9">
+                    <div *ngIf="!isEditable">
+                        <show-movie-detail [selectedMovieDetail]="selectedMovieDetail"></show-movie-detail>
+                    </div>
+                    <div *ngIf="isEditable">
+                        <edit-movie-detail [selectedMovieDetail]="selectedMovieDetail"></edit-movie-detail>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <img style="padding-top: 20px;" src="http://image.tmdb.org/t/p/w185{{selectedMovieDetail?.poster_path}}"/>
+                </div>
+            </div>
+            <div class="col-md-12" style="height: 166px;">
+                <span>Overview</span>:
+                <div *ngIf="!isEditable">{{selectedMovieDetail?.overview}}</div>
+                <textarea *ngIf="isEditable" class="form-control" rows="6" [(ngModel)]="selectedMovieDetail.overview"></textarea>   
+            </div>
+            <div class="col-md-12">
+                <button type="button" class="btn btn-primary" *ngIf="!isEditable" (click)="editMovieDetail()">Edit</button>
+                <button type="button" class="btn btn-primary" *ngIf="isEditable" (click)="saveMovieDetail(selectedMovieDetail.id)">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
