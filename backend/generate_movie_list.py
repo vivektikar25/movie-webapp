@@ -2,7 +2,7 @@ import tmdbsimple as tmdb
 import json
 tmdb.API_KEY = '595fdbd6d1eb77a8affa09cf219ab6ae'
 search = tmdb.Search()
-movie_list = ['john', "word", "love", "and", "the" ]
+movie_list = ['john', "word", "live", "and", "the" ]
 movie_object_list = [] 
 for movie in movie_list:
 	response = search.movie(query=movie)
