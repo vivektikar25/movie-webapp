@@ -1,7 +1,7 @@
 <div class="col-md-12">
     <div class="col-md-9">
         <div class="col-md-12 row" style="margin-top: 5px;">
-            <div  class="col-md-4" ><h4>Text</h4></div>
+            <div  class="col-md-4" ><h4>Title</h4></div>
             <div class="col-md-1"><h4>:</h4></div>
             <div class="col-md-7" >
                 <input type="text" class="form-control" [(ngModel)]="selectedMovieDetail.title"/>
@@ -69,8 +69,8 @@
     </div>
 </div>
 <div class="col-md-12" style="height: 166px;">
-    <span>Overview</span>:
-    <textarea class="form-control" rows="6" [(ngModel)]="selectedMovieDetail.overview"></textarea>   
+    <span><h5>Overview:</h5></span>
+    <textarea class="form-control" rows="5" [(ngModel)]="selectedMovieDetail.overview"></textarea>   
 </div>
 <div class="col-md-12">
     <button type="button" class="btn btn-primary" (click)="saveMovieChanges()">Save</button>

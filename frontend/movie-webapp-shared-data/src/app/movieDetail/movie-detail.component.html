@@ -23,14 +23,14 @@
                     <img style="padding-top: 20px;" src="http://image.tmdb.org/t/p/w185{{selectedMovieDetail?.poster_path}}"/>
                 </div>
             </div>
-            <div class="col-md-12" style="height: 166px;">
-                <span>Overview</span>:
+            <div class="col-md-12" style="height: 130px;">
+                <span><h5>Overview:</h5></span>
                 <div *ngIf="!isEditable">{{selectedMovieDetail?.overview}}</div>
-                <textarea *ngIf="isEditable" class="form-control" rows="6" [(ngModel)]="selectedMovieDetail.overview"></textarea>   
+                <textarea *ngIf="isEditable" class="form-control" rows="4" [(ngModel)]="selectedMovieDetail.overview"></textarea>   
             </div>
             <div class="col-md-12">
                 <button type="button" class="btn btn-primary" *ngIf="!isEditable" (click)="editMovieDetail()">Edit</button>
-                <button type="button" class="btn btn-primary" *ngIf="isEditable" (click)="saveMovieDetail()">Save</button>
+                <button type="button" class="btn btn-primary" *ngIf="isEditable" style="margin-top:10px;" (click)="saveMovieDetail()">Save</button>
             </div>
         </div>
     </div>
