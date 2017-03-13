@@ -21,17 +21,18 @@ export class MovieDetailComponent{
     
     editMovieDetail = () => this.isEditable = true;
 
-    saveMovieDetail = (movieId): void => {
-        let updatedMovieObj = this.movieService.getMovieById(movieId, this.movieList);
+    saveMovieDetail = (updatedMovieObj): void => {
         this.updateMovieDetail.emit(updatedMovieObj);
         this.isEditable = false;
     }
 
     getMovieDetail(selectedMovieId): void{
         if(!this.isEditable){
-            this.selectedMovieDetail = this.movieList.find(function(movie){
+            let movieDetailObj;
+             movieDetailObj = this.movieList.find(function(movie){
                 return selectedMovieId == movie.id;
             })
+            this.selectedMovieDetail = Object.assign({}, movieDetailObj);
         }else{
             this.toasterService.pop('warning', 'Warning', 'Save chanes please')
         }

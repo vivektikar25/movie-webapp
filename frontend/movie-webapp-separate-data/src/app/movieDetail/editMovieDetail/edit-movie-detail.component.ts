@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 import { ToasterService } from 'angular2-toaster';
 import { IMovie } from './../../shared/movie.interface';
 
@@ -9,5 +9,12 @@ import { IMovie } from './../../shared/movie.interface';
 })
 export class EditMovieDetailComponent {
     @Input() selectedMovieDetail: IMovie;
+    @Output() saveMovieDetail = new EventEmitter();
+
     constructor(private toasterService: ToasterService){ }
+
+    saveMovieChanges = () =>{ 
+        console.log(this.selectedMovieDetail);
+        this.saveMovieDetail.emit(this.selectedMovieDetail)
+    };
 }

@@ -1,121 +1,77 @@
-<!--<div class="col-md-12">
-    <div style="margin-top: 40px;">
-        <h4>
-            <div class="col-md-4"><span> Title</span>:</div>
-            <div class="col-md-7 movie-detail-values" ><span style="text-decoration: underline;">{{selectedMovieDetail?.title}}</span></div>
-        </h4>
+<div class="col-md-12">
+    <div class="col-md-9">
+        <div class="col-md-12 row">
+            <div  class="col-md-4" ><h4>Text</h4></div>
+            <div class="col-md-1"><h4>:</h4></div>
+            <div class="col-md-7 movie-detail-values">
+                <h4><span>{{selectedMovieDetail?.title}}</span></h4>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div  class="col-md-4" ><h4>Popularity</h4></div>
+            <div class="col-md-1"><h4>:</h4></div>
+            <div class="col-md-7 movie-detail-values" >
+                <h4>{{selectedMovieDetail?.popularity}}</h4>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div  class="col-md-4" ><h4>Original Title</h4></div>
+            <div class="col-md-1"><h4>:</h4></div>
+            <div class="col-md-7 movie-detail-values" >
+                <h4>{{selectedMovieDetail?.original_title}}</h4>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div  class="col-md-4" ><h4>Release Date</h4></div>
+            <div class="col-md-1"><h4>:</h4></div>
+            <div class="col-md-7 movie-detail-values" >
+                <h4>{{selectedMovieDetail?.release_date}}</h4>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div  class="col-md-4" ><h4>Vote Count</h4></div>
+            <div class="col-md-1"><h4>:</h4></div>
+            <div class="col-md-7 movie-detail-values" >
+                <h4>{{selectedMovieDetail?.vote_count}}</h4>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div  class="col-md-4" ><h4>Video</h4></div>
+            <div class="col-md-1"><h4>:</h4></div>
+            <div class="col-md-7 movie-detail-values" >
+                <h4>{{selectedMovieDetail?.video}}</h4>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div  class="col-md-4" ><h4>adult</h4></div>
+            <div class="col-md-1"><h4>:</h4></div>
+            <div class="col-md-7 movie-detail-values" >
+                <h4>{{selectedMovieDetail?.adult}}</h4>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div  class="col-md-4" ><h4>Vote Average</h4></div>
+            <div class="col-md-1"><h4>:</h4></div>
+            <div class="col-md-7 movie-detail-values" >
+                <h4>{{selectedMovieDetail?.vote_average}}</h4>
+            </div>
+        </div>
+        <div class="col-md-12 row">
+            <div  class="col-md-4"><h4>Original Language</h4></div>
+            <div class="col-md-1"><h4>:</h4></div>
+            <div class="col-md-7 movie-detail-values" >
+                <h4>{{selectedMovieDetail?.original_language}}</h4>
+            </div>
+        </div>
     </div>
-    <div style="margin-top: 40px;">
-        <h4>
-            <div class="col-md-4"><span> popularity</span>:</div>
-            <div class="col-md-7 movie-detail-values" ><span style="text-decoration: underline;">{{selectedMovieDetail?.popularity}}</span></div>
-        </h4>
+    <div class="col-md-3">
+        <img style="padding-top: 20px;" src="http://image.tmdb.org/t/p/w185{{selectedMovieDetail?.poster_path}}"/>
     </div>
-    <div style="margin-top: 40px;">
-        <h4>
-            <div class="col-md-4"><span> Original Title</span>:</div> 
-            <div class="col-md-7 movie-detail-values" ><span style="text-decoration: underline;">{{selectedMovieDetail?.original_title}}</span></div>
-        </h4>
-    </div>
-    <div style="margin-top: 40px;">
-        <h4>
-            <div class="col-md-4"><span> Release Date</span>:</div> 
-            <div class="col-md-7 movie-detail-values" ><span style="text-decoration: underline;">{{selectedMovieDetail?.release_date}}</span></div>
-        </h4>
-    </div>
-    <div style="margin-top: 40px;">
-        <h4>
-            <div class="col-md-4"><span> Vote Count</span>:</div> 
-            <div class="col-md-7 movie-detail-values" ><span style="text-decoration: underline;">{{selectedMovieDetail?.vote_count}}</span></div>
-        </h4>
-    </div>
-    <div style="margin-top: 40px;">
-        <h4>
-            <div class="col-md-4"><span> Video</span>:</div> 
-            <div class="col-md-7 movie-detail-values" ><span style="text-decoration: underline;">{{selectedMovieDetail?.video}}</span></div>
-        </h4>
-    </div>
-    <div style="margin-top: 40px;">
-        <h4>
-            <div class="col-md-4"><span> adult</span>:</div> 
-            <div class="col-md-7 movie-detail-values" ><span style="text-decoration: underline;">{{selectedMovieDetail?.adult}}</span></div>
-        </h4>
-    </div>
-    <div style="margin-top: 40px;">
-        <h4>
-            <div class="col-md-4"><span> Vote Average</span>:</div> 
-            <div class="col-md-7 movie-detail-values" ><span style="text-decoration: underline;">{{selectedMovieDetail?.vote_average}}</span></div>
-        </h4>
-    </div>
-    <div style="margin-top: 40px;">
-        <h4>
-            <div class="col-md-4"><span> Original Language</span>:</div> 
-            <div class="col-md-7 movie-detail-values" ><span style="text-decoration: underline;">{{selectedMovieDetail?.original_language}}</span></div>
-        </h4>
-    </div>
-</div>  -->
-<div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Text</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values">
-    <h4><span>{{selectedMovieDetail?.title}}</span></h4>
-  </div>
 </div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Popularity</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.popularity}}</h4>
-  </div>
+<div class="col-md-12" style="height: 166px;">
+    <span>Overview</span>:
+    <div>{{selectedMovieDetail?.overview}}</div>
 </div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Original Title</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.original_title}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Release Date</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.release_date}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Vote Count</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.vote_count}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Video</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.video}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>adult</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.adult}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Vote Average</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.vote_average}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4"><h4>Original Language</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.original_language}}</h4>
-  </div>
-</div>
+<div class="col-md-12">
+    <button type="button" class="btn btn-primary" (click)="goToMovieDetail()">Edit</button>
 </div>
