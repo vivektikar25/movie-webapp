@@ -29,20 +29,20 @@ export class MovieService {
                         
     }
 
-    updateMovieDetail = (updateMovieId, updatedMovieObject) => {
+    updateMovieDetail = (updateMovieId: number, updatedMovieObject: IMovie) => {
         return this.http.put(MovieConstants.movieListApiUrl + updateMovieId+ "/", updatedMovieObject)
                         .map((res: Response) => res.json())
                         .catch((error: any) => Observable.throw(error.json()).error || 'Server down');
     }
 
-    getMovieById = (movieId, movies) => {
+    getMovieById = (movieId: number, movies: IMovie[]) => {
         let movie = movies.find(function(currentMovie){
             return currentMovie.id === movieId;
         });
-        return movie || {};
+        return movie;
     }
 
-    updateLocalMovieList = (updateMovieId, updatedMovieObj) =>{
+    updateLocalMovieList = (updateMovieId: number, updatedMovieObj: IMovie) =>{
         let movieIndex = this.movieList.findIndex((movie): boolean => {
             return updateMovieId == movie.id;
         });
@@ -50,4 +50,13 @@ export class MovieService {
     };
 
     getLocalMovieList = () => this.movieList;
+
+    getFilteredList = (movieList: IMovie[], filterBy: string) =>{
+        let lowerCaseFilterBy = filterBy.toLowerCase();
+        let filteredList = movieList.filter(function(movie){
+            let lowerCaseMovieTitle = movie.title.toLowerCase();
+            return lowerCaseMovieTitle.includes(lowerCaseFilterBy);
+        });
+        return filteredList;
+    }
 }
