@@ -1,6 +1,5 @@
 backend/virtual_env/*
-frontend/movie-webapp-separate-data/node_modules/*
-frontend/movie-webapp-shared-data/node_modules/*
-frontend/movie-webapp-shared-data/npm-debug.log
+frontend/node_modules/*
+frontend/node_modules/*
+frontend/npm-debug.log
 backend/.idea/workspace.xml
-frontend/movie-webapp-separate-data/npm-debug.log

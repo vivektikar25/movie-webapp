@@ -1,0 +1,29 @@
+.detail-view {
+    margin:20px 0px;
+}
+
+.movie-title-panel {
+    margin-bottom:50px;
+}
+
+.movie-title {
+    border:solid grey 2px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 574px;
+    overflow: auto;
+    background-color: rgba(154, 142, 142, 0.32);
+}
+
+.movie-detail-panel {
+    border:solid grey 2px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 574px;
+    background-color: rgb(238, 238, 238);
+}
+
+.highlight-title{
+    color: #3636E8;
+    font-size: 16px;
+}
