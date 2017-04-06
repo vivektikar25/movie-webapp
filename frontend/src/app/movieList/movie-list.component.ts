@@ -12,16 +12,15 @@ export class MovieListComponent {
     @Input() movieList: IMovie[];
     @Output() showMovieDetail = new EventEmitter();
     @Output() updateMovieDetail = new EventEmitter();
+    @Output() editMovie = new EventEmitter();
 
     constructor(private toasterService: ToasterService){ }
 
     editRow = (newEditableMovieId:number): void => {
-        if(this.currentEditableMovieId != -1){
-            this.toasterService.pop('warning', 'Warning', 'Save changes please')
-        }
-        else{
-            this.currentEditableMovieId=newEditableMovieId;
-        }
+        var editMovieParams = {};
+        editMovieParams["editableView"] = "listView";
+        editMovieParams["movieId"] = newEditableMovieId;
+        this.editMovie.emit(editMovieParams);
     }
 
     saveChanges = (): void => {

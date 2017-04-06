@@ -31,7 +31,8 @@ export class AppComponent implements OnInit {
   }
 
   updateMovieDetail = (updateMovieId) => {
-    let updatedMovieObject = this.movieService.getMovieById(updateMovieId, this.movies);
+    let movieIndex = this.movieService.getMoviesIndex(updateMovieId, this.movies);
+    let updatedMovieObject = this.movies[movieIndex];
     this.movieService.updateMovieDetail(updateMovieId, updatedMovieObject)
                      .subscribe((successPayload) => {
                         this.toasterService.pop("success", "Success", "Movie detail updated successfully");   
@@ -39,5 +40,17 @@ export class AppComponent implements OnInit {
                       (failurePayload)=> {
                         this.toasterService.pop("error", "Error", "Unable to save data make sure all edited values are valid");
                       });
+  }
+
+  editMovie = (editMovieParams) => {
+    let movieId = editMovieParams.movieId;
+    let editableView = editMovieParams.editableView;
+    let movieIndex = this.movieService.getMoviesIndex(movieId, this.movies);
+    if(editableView === "listView"){
+      this.movies[movieIndex].isEditableInListView = true;
+    }
+    else{
+      this.movies[movieIndex].isEditableInDetailView = true;
+    }
   }
 }

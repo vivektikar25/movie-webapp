@@ -18,7 +18,8 @@ export class MovieService {
     getMovieList = () => {
         return this.http.get(MovieConstants.movieListApiUrl)
                         .map((res:Response) => {
-                            let movieList: IMovie[] = res.json();
+                            let data = res.json();
+                            let movieList: IMovie[] = this.addEditFlags(data); 
                             this.movieList = movieList; 
                             return movieList;
                         })
@@ -35,12 +36,21 @@ export class MovieService {
                         .catch((error: any) => Observable.throw(error.json()).error || 'Server down');
     }
 
-    getMovieById = (movieId, movies) => {
-        let movie = movies.find(function(currentMovie){
+    getMoviesIndex = (movieId, movies) => {
+        let movieIndex = movies.findIndex(function(currentMovie){
             return currentMovie.id === movieId;
         });
-        return movie || {};
+        return movieIndex;
     }
 
-    
+    addEditFlags = (movieList) => {
+        let movieListWithEditFlags = movieList.map((movie) => {
+            movie.isEditableInListView = false;
+            movie.isEditableInDetailView = false;
+            return movie;
+        });
+
+        return movieListWithEditFlags;
+    }
+
 }

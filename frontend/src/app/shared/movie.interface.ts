@@ -12,6 +12,8 @@ export interface IMovie {
   vote_average: number
   original_language: string
   overview: string
+  isEditableInListView?: boolean
+  isEditableInDetailView?: boolean
 }
 
 export interface ISelectedMovieObj {

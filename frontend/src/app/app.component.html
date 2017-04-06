@@ -6,7 +6,8 @@
   <movie-list [movieList]="movies" 
               (showMovieDetail)="showMovieDetail($event)"
               [hidden]="currentActivatedView=='detailView'"
-              (updateMovieDetail)="updateMovieDetail($event)"></movie-list>
+              (updateMovieDetail)="updateMovieDetail($event)"
+              (editMovie)="editMovie($event)"></movie-list>
   <movie-detail [movieList]="movies" 
                 [selectedMovieObject]="selectedMovieObject"
                 [hidden]="currentActivatedView=='listView'"
