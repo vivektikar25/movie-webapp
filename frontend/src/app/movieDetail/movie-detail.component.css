@@ -3,6 +3,7 @@
 }
 .detail-view {
     margin:20px 0px;
+    margin-top:60px;
 }
 
 .movie-title-panel {
@@ -17,18 +18,10 @@
     overflow: auto;
     background-color: rgba(154, 142, 142, 0.32);
 }
-.movie-list {
-    cursor:pointer;
-}
-.movie-detail-panel {
-    border:solid grey 2px;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    height: 574px;
-    background-color: rgb(238, 238, 238);
-}
-.movie-detail-panel .poster-image {
-        padding-top: 20px;
+
+
+.poster-image {
+        padding: 20px;
 }
 
 .highlight-title{
@@ -36,3 +29,23 @@
     font-size: 16px;
 }
 
+.item-list {
+        background-color:rgba(171, 156, 247, 0.56);
+        cursor: pointer;
+}
+
+.md-card{
+    padding: 0px;
+}
+
+.movies-list {
+    height: 100%;
+    width: 100%;
+    overflow:auto;
+}
+
+.detail-pane{
+    background-color:#D0C8F5;
+    height: 100%;
+    width: 100%;
+}

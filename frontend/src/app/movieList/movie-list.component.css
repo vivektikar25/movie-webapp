@@ -5,3 +5,30 @@
 .action-list{
     color: grey;
 }
+
+.action-list > span{
+    cursor: pointer;
+}
+.spread-sheet-view {
+    margin-top:20px;
+}
+
+.spread-sheet-view > tr {
+    height:60px;
+}
+
+.spread-sheet-view > tr > th {
+    vertical-align: middle;
+    text-align: left;
+    font-size: 18px;
+}
+
+.movie-list {
+    height:60px;
+}
+
+.movie-list > td {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+}

@@ -1,3 +1,35 @@
 .webapp-header {
     text-align:center;color:#363684
 }
+
+.header-image-field {
+    display:inline; 
+    margin-left: 36%;
+}
+
+.header-image{
+    height: 75px;
+    width: 125px;
+}
+
+.header-title{
+    color: white;
+    margin-left: 8%;
+    font-weight: 200;
+    font-family: -webkit-body; 
+    display: inline;
+    font-size: xx-large;
+    margin-left: 0px; 
+}
+
+.search-field{
+    display:inline;
+    float: right;
+    margin-top: 42px;
+    font-size: initial;
+    color:aliceblue
+}
+
+.header {
+    background-color: #38315a;
+}

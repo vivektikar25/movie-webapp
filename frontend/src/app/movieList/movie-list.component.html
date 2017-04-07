@@ -1,38 +1,35 @@
 <div class="col-md-12">
   <div class="col-md-12">
-    <table class="table table-striped" style="margin-top:20px;">
+    <table class="table table-striped spread-sheet-view">
       <thead>
-        <tr style="height:60px;">
-          <th style="vertical-align: middle;text-align: left;font-size: 18px;">Title</th>
-          <th style="vertical-align: middle;text-align: center;font-size: 18px;">Release Date</th>
-          <th style="vertical-align: middle;text-align: center;font-size: 18px;">Vote Count</th>
-          <th style="vertical-align: middle;text-align: center;font-size: 18px;">Original Language</th>
-          <th style="vertical-align: middle;text-align: center;font-size: 18px;">Options</th>
+        <tr class="movie-list">
+          <th>Movie Title</th>
+          <th>Release Date</th>
+          <th>Vote Count</th>
+          <th>Original Language</th>
+          <th>Options</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let movie of movieList;" style="height:60px;">  
+        <tr *ngFor="let movie of movieList;" class="movie-list">  
           <td style="vertical-align: middle;text-align: left;">
               <span *ngIf="!movie.isEditableInListView" class="movie-title">{{movie.title}}</span>
               <span *ngIf="movie.isEditableInListView"><input type="text" class="form-control" [(ngModel)]="movie.title"/></span>
           </td>
-          <td style="vertical-align: middle;text-align: center;font-size: 16px;
-">
+          <td>
               <span *ngIf="!movie.isEditableInListView">{{movie.release_date}}</span>
               <span *ngIf="movie.isEditableInListView"><input type="text" class="form-control" [(ngModel)]="movie.release_date"/></span>
           </td>
-          <td style="vertical-align: middle;text-align: center;font-size: 16px;
-">
+          <td>
               <span>{{movie.vote_count}}</span>
           </td>
-          <td style="vertical-align: middle;text-align: center;font-size: 16px;
-">
+          <td>
               <span>{{movie.original_language}}</span>
           </td>
           <td class="action-list" style="vertical-align: middle;text-align: center;">
-              <span *ngIf="!movie.isEditableInListView" class="glyphicon glyphicon-pencil" (click)="editRow(movie.id)"></span>
-              <span *ngIf="movie.isEditableInListView" class="glyphicon glyphicon-ok" (click)="saveChanges(movie.id)"></span>
-              <span class="glyphicon glyphicon-edit" (click)="gotoMovieDetail(movie.id)"></span>
+              <span *ngIf="!movie.isEditableInListView" (click)="editRow(movie.id)" title="Edit"><md-icon>edit</md-icon></span>
+              <span *ngIf="movie.isEditableInListView"  (click)="saveChanges(movie.id)" title="Save"><md-icon>save</md-icon></span>
+              <span (click)="gotoMovieDetail(movie.id)" title="Detail"><md-icon>send</md-icon></span>
           </td>
         </tr>
       </tbody>
