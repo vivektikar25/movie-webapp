@@ -18,8 +18,8 @@ export class MovieListComponent {
                 private movieService: MovieService){ }
 
     editRow = (newEditableMovieId:number): void => {
-        var editMovieParams = {};
-        editMovieParams["editableView"] = "listView";
+        let editMovieParams = {};
+        editMovieParams["editFlagName"] = "isEditableInListView";
         editMovieParams["movieId"] = newEditableMovieId;
         this.editMovie.emit(editMovieParams);
     };

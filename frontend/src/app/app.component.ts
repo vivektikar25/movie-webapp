@@ -32,25 +32,44 @@ export class AppComponent implements OnInit {
 
   updateMovieDetail = (updatedMovieObject) => {
     let updatedMovieId = updatedMovieObject.id;
+    let moviesEditFlags = {};
+    moviesEditFlags["isEditableInListView"] = updatedMovieObject["isEditableInListView"];
+    moviesEditFlags["isEditableInDetailView"] = updatedMovieObject["isEditableInDetailView"];
     let updatedMovie = this.movieService.removeEditFlags(updatedMovieObject);
     this.movieService.updateMovieDetail(updatedMovieId, updatedMovie)
                      .subscribe((successPayload) => {
+                        this.setEditFlags(updatedMovieId);
                         this.toasterService.pop("success", "Success", "Movie detail updated successfully");   
                       },
                       (failurePayload)=> {
+                        this.resetMoviesEditState(updatedMovieId, moviesEditFlags);
                         this.toasterService.pop("error", "Error", "Unable to save data make sure all edited values are valid");
                       });
   }
 
   editMovie = (editMovieParams) => {
     let movieId = editMovieParams.movieId;
-    let editableView = editMovieParams.editableView;
+    let editableFlagName = editMovieParams.editFlagName;
     let movieIndex = this.movieService.getMoviesIndex(movieId, this.movies);
-    if(editableView === "listView"){
-      this.movies[movieIndex].isEditableInListView = true;
+    this.movies[movieIndex][editableFlagName] = true;
+  }
+
+  resetMoviesEditState = (updatedMovieId, moviesEditFlags) => {
+    let editMovieParams = {};
+    editMovieParams["movieId"] = updatedMovieId;
+    for (let key in moviesEditFlags){
+        let editFlagName = key;
+        let editFlagValue = moviesEditFlags[key];
+        if(editFlagValue) {
+            editMovieParams["editFlagName"] = editFlagName;
+            this.editMovie(editMovieParams);
+        }
     }
-    else{
-      this.movies[movieIndex].isEditableInDetailView = true;
-    }
+  }
+
+  setEditFlags = (movieId) => {
+    let movieIndex = this.movieService.getMoviesIndex(movieId, this.movies);
+    this.movies[movieIndex]["isEditableInListView"] = false;
+    this.movies[movieIndex]["isEditableInDetailView"] = false;
   }
 }
