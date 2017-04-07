@@ -30,10 +30,10 @@ export class AppComponent implements OnInit {
     this.currentActivatedView = this.currentActivatedView == 'listView'? 'detailView': 'listView'; 
   }
 
-  updateMovieDetail = (updateMovieId) => {
-    let movieIndex = this.movieService.getMoviesIndex(updateMovieId, this.movies);
-    let updatedMovieObject = this.movies[movieIndex];
-    this.movieService.updateMovieDetail(updateMovieId, updatedMovieObject)
+  updateMovieDetail = (updatedMovieObject) => {
+    let updatedMovieId = updatedMovieObject.id;
+    let updatedMovie = this.movieService.removeEditFlags(updatedMovieObject);
+    this.movieService.updateMovieDetail(updatedMovieId, updatedMovie)
                      .subscribe((successPayload) => {
                         this.toasterService.pop("success", "Success", "Movie detail updated successfully");   
                       },

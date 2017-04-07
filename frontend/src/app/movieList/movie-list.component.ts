@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ToasterService } from 'angular2-toaster';
 import { IMovie } from './../shared/movie.interface';
+import { MovieService } from './../shared/movie.service';
 
 @Component({
     selector: 'movie-list',
@@ -8,27 +9,28 @@ import { IMovie } from './../shared/movie.interface';
     styleUrls: ['./movie-list.component.css']
 })
 export class MovieListComponent {
-    currentEditableMovieId: number = -1;
     @Input() movieList: IMovie[];
     @Output() showMovieDetail = new EventEmitter();
     @Output() updateMovieDetail = new EventEmitter();
     @Output() editMovie = new EventEmitter();
 
-    constructor(private toasterService: ToasterService){ }
+    constructor(private toasterService: ToasterService,
+                private movieService: MovieService){ }
 
     editRow = (newEditableMovieId:number): void => {
         var editMovieParams = {};
         editMovieParams["editableView"] = "listView";
         editMovieParams["movieId"] = newEditableMovieId;
         this.editMovie.emit(editMovieParams);
-    }
+    };
 
-    saveChanges = (): void => {
-        this.updateMovieDetail.emit(this.currentEditableMovieId);
-        this.currentEditableMovieId = -1
+    saveChanges = (movieId): void => {
+        let movieIndex = this.movieService.getMoviesIndex(movieId, this.movieList) 
+        let updatedMovieObject = this.movieList[movieIndex];
+        this.updateMovieDetail.emit(updatedMovieObject);
     };
 
     gotoMovieDetail = (movieId): void => {
         this.showMovieDetail.emit(movieId);
-    }
+    };
 }

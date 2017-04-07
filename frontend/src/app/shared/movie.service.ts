@@ -53,4 +53,10 @@ export class MovieService {
         return movieListWithEditFlags;
     }
 
+    removeEditFlags = (movie) => {
+        delete movie["isEditableInListView"];
+        delete movie["isEditableInDetailView"];
+        return movie;
+    }
+
 }
