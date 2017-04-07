@@ -17,10 +17,10 @@ export class MovieListComponent {
     constructor(private toasterService: ToasterService,
                 private movieService: MovieService){ }
 
-    editRow = (newEditableMovieId:number): void => {
+    editRow = (movieId:number): void => {
         let editMovieParams = {};
         editMovieParams["editFlagName"] = "isEditableInListView";
-        editMovieParams["movieId"] = newEditableMovieId;
+        editMovieParams["movieId"] = movieId;
         this.editMovie.emit(editMovieParams);
     };
 

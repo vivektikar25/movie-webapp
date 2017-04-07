@@ -12,5 +12,6 @@
                 [selectedMovieObject]="selectedMovieObject"
                 [hidden]="currentActivatedView=='listView'"
                 (toggleView)="toggleView()"
-                (updateMovieDetail)="updateMovieDetail($event)"></movie-detail>
+                (updateMovieDetail)="updateMovieDetail($event)"
+                (editMovie)="editMovie($event)"></movie-detail>
 </div>

@@ -14,9 +14,9 @@ export class MovieDetailComponent implements OnChanges{
     @Output() showMovieDetail = new EventEmitter();
     @Output() toggleView = new EventEmitter();
     @Output() updateMovieDetail = new EventEmitter();
+    @Output() editMovie = new EventEmitter();
     selectedMovieDetail: IMovie;
     isEditable: boolean = false;
-
     constructor(private movieService: MovieService, 
                 private toasterService: ToasterService) { }
     
@@ -24,23 +24,16 @@ export class MovieDetailComponent implements OnChanges{
         this.selectedMovieObject = payload.selectedMovieObject? payload.selectedMovieObject.currentValue: 0;
         this.getMovieDetail(this.selectedMovieObject.selectedMovieId);
     } 
-
-    editMovieDetail = () => this.isEditable = true;
-
+    
     saveMovieDetail = (): void => {
-        let movieId = this.selectedMovieObject.selectedMovieId;
-        this.updateMovieDetail.emit(movieId);
-        this.isEditable = false;
+        this.updateMovieDetail.emit(this.selectedMovieDetail);
     }
 
     getMovieDetail(selectedMovieId): void{
-        if(!this.isEditable){
-            this.selectedMovieDetail = this.movieList.find(function(movie){
-                return selectedMovieId == movie.id;
-            })
-        }else{
-            this.toasterService.pop('warning', 'Warning', 'Save chanes please')
-        }
+        this.selectedMovieDetail = this.movieList.find(function(movie){
+            return selectedMovieId == movie.id;
+        });
+        console.log(this.selectedMovieDetail);
     }
 
     getBackToListView = (): void => {
@@ -49,5 +42,12 @@ export class MovieDetailComponent implements OnChanges{
         }else{
             this.toggleView.emit();
         }
+    }
+
+    editMovieDetail = (movieId) => {
+        let editMovieParams = {};
+        editMovieParams["editFlagName"] = "isEditableInDetailView";
+        editMovieParams["movieId"] = movieId;
+        this.editMovie.emit(editMovieParams);
     }
 }
