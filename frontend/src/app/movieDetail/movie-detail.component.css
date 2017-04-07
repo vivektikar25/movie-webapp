@@ -17,7 +17,9 @@
     overflow: auto;
     background-color: rgba(154, 142, 142, 0.32);
 }
-
+.movie-list {
+    cursor:pointer;
+}
 .movie-detail-panel {
     border:solid grey 2px;
     border-bottom-right-radius: 5px;
@@ -33,3 +35,4 @@
     color: #3636E8;
     font-size: 16px;
 }
+

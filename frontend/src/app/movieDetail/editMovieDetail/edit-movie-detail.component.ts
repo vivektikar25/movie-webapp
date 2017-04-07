@@ -5,7 +5,7 @@ import { IMovie } from './../../shared/movie.interface';
 @Component({
     selector: 'edit-movie-detail',
     templateUrl: './edit-movie-detail.component.html',
-    styleUrls: ['edit-movie-detail.component.html']
+    styleUrls: ['./edit-movie-detail.component.css']
 })
 export class EditMovieDetailComponent {
     @Input() selectedMovieDetail: IMovie;

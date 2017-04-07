@@ -4,8 +4,8 @@
     </div>
     <div class="col-md-12 movie-title-panel">
         <div class="col-md-3 movie-title">
-            <ul *ngFor="let movie of movieList" (click)="getMovieDetail(movie.id)">
-                <li style="cursor:pointer;" [class.highlight-title]="movie?.id == selectedMovieDetail?.id">{{movie.title}}</li>
+            <ul *ngFor="let movie of movieList" class="movie-list" (click)="getMovieDetail(movie.id)">
+                <li [class.highlight-title]="movie?.id == selectedMovieDetail?.id">{{movie.title}}</li>
                 <hr>
             </ul>
         </div>

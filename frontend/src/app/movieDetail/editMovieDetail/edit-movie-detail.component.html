@@ -1,5 +1,5 @@
 <div>
-    <div class="col-md-12 row" style="margin-top: 5px;">
+    <div class="col-md-12 row movie-title">
         <div  class="col-md-4" ><h4>Title</h4></div>
         <div class="col-md-1"><h4>:</h4></div>
         <div class="col-md-7" >
@@ -62,11 +62,11 @@
             <input type="text" class="form-control" [(ngModel)]="selectedMovieDetail.original_language"/>
         </div>
     </div>
-    <div class="col-md-12" style="height: 130px;">
+    <div class="col-md-12 movie-overview">
         <span><h5>Overview:</h5></span>
         <textarea class="form-control" rows="4" [(ngModel)]="selectedMovieDetail.overview"></textarea>   
     </div>
     <div class="col-md-12">
-        <button type="button" class="btn btn-primary" style="margin-top:10px;" (click)="saveMovieChanges()">Save</button>
+        <button type="button" class="btn btn-primary save-movie-button" (click)="saveMovieChanges()">Save</button>
     </div>
 </div>
