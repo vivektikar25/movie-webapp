@@ -1,8 +1,21 @@
-<div>
+<div style="background-color: #38315a">
   <toaster-container></toaster-container>
-  <div class="jumbotron webapp-header">
-    <h2>Movie Detail Webapp</h2>
-  </div>
+  <md-card>
+      <div>
+        <div style="display:inline;    margin-left: 36%;">
+          <img style="height: 75px;width: 125px;" src="http://t03.deviantart.net/ggqt5W-Z7dX7fNLA-4kNWCncFzM=/300x200/filters:fixed_height(100,100):origin()/pre03/7bdb/th/pre/f/2013/287/1/0/ticket_movie_icon_by_quaffleeye-d6qj6e1.png"/>
+        </div>
+        <div style="color: white;margin-left: 8%;font-weight: 200;   font-family: -webkit-body; display: inline;font-size: xx-large;
+            margin-left: 0px; ">
+           In Touch Movies
+        </div>
+        <div style="display:inline;float: right;margin-top: 42px;font-size: initial;">
+          <md-input-container style="color:aliceblue">
+            <input mdInput placeholder="SEARCH" value="">
+          </md-input-container>
+        </div>
+      </div>
+  </md-card>
   <movie-list [movieList]="movies" 
               (showMovieDetail)="showMovieDetail($event)"
               [hidden]="currentActivatedView=='detailView'"

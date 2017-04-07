@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AlertModule } from 'ng2-bootstrap/alert';
 import { ToasterModule, ToasterService } from 'angular2-toaster';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MovieListComponent } from './movieList/movie-list.component';
@@ -26,6 +27,7 @@ import { EditMovieDetailComponent } from './movieDetail/editMovieDetail/edit-mov
     HttpModule,
     AlertModule,
     ToasterModule,
+    MaterialModule,
   ],
   providers: [
     MovieService,
