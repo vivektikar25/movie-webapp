@@ -62,4 +62,11 @@
     <h4>{{selectedMovieDetail?.original_language}}</h4>
   </div>
 </div>
+ <div class="col-md-12" style="height: 130px;">
+    <span><h5>Overview:</h5></span>
+    <div>{{selectedMovieDetail?.overview}}</div>
+</div>
+<div class="col-md-12">
+    <button type="button" class="btn btn-primary" (click)="editMovie(selectedMovieDetail?.id)">Edit</button>
+</div>
 </div>

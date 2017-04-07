@@ -1,6 +1,6 @@
 <div  class="col-md-12" class="detail-view" *ngIf="selectedMovieDetail">
     <div>
-        <button type="button" (click)="getBackToListView()" class="btn btn-primary pull-right" style="margin:20px">Back</button>
+        <button type="button" (click)="getBackToListView()" class="btn btn-primary pull-right back-button">Back</button>
     </div>
     <div class="col-md-12 movie-title-panel">
         <div class="col-md-3 movie-title">
@@ -13,24 +13,17 @@
             <div class="col-md-12">
                 <div class="col-md-9">
                     <div *ngIf="!selectedMovieDetail?.isEditableInDetailView">
-                        <show-movie-detail [selectedMovieDetail]="selectedMovieDetail"></show-movie-detail>
+                        <show-movie-detail [selectedMovieDetail]="selectedMovieDetail"
+                                           (editMovieDetail)="editMovieDetail($event)"></show-movie-detail>
                     </div>
                     <div *ngIf="selectedMovieDetail?.isEditableInDetailView">
-                        <edit-movie-detail [selectedMovieDetail]="selectedMovieDetail"></edit-movie-detail>
+                        <edit-movie-detail [selectedMovieDetail]="selectedMovieDetail"
+                                           (saveMovieDetail)="saveMovieDetail($event)"></edit-movie-detail>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <img style="padding-top: 20px;" src="http://image.tmdb.org/t/p/w185{{selectedMovieDetail?.poster_path}}"/>
+                    <img class="poster-image" src="http://image.tmdb.org/t/p/w185{{selectedMovieDetail?.poster_path}}"/>
                 </div>
-            </div>
-            <div class="col-md-12" style="height: 130px;">
-                <span><h5>Overview:</h5></span>
-                <div *ngIf="!selectedMovieDetail?.isEditableInDetailView">{{selectedMovieDetail?.overview}}</div>
-                <textarea *ngIf="selectedMovieDetail?.isEditableInDetailView" class="form-control" rows="4" [(ngModel)]="selectedMovieDetail.overview"></textarea>   
-            </div>
-            <div class="col-md-12">
-                <button type="button" class="btn btn-primary" *ngIf="!selectedMovieDetail?.isEditableInDetailView" (click)="editMovieDetail(selectedMovieDetail?.id)">Edit</button>
-                <button type="button" class="btn btn-primary" *ngIf="selectedMovieDetail?.isEditableInDetailView" style="margin-top:10px;" (click)="saveMovieDetail()">Save</button>
             </div>
         </div>
     </div>

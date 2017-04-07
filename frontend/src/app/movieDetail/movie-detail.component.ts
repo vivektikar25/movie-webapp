@@ -36,18 +36,10 @@ export class MovieDetailComponent implements OnChanges{
         console.log(this.selectedMovieDetail);
     }
 
-    getBackToListView = (): void => {
-        if(this.isEditable){
-            this.toasterService.pop('warning', 'Warning', 'Save chanes please')
-        }else{
-            this.toggleView.emit();
-        }
-    }
+    getBackToListView = (): void => this.toggleView.emit();
+        
 
-    editMovieDetail = (movieId) => {
-        let editMovieParams = {};
-        editMovieParams["editFlagName"] = "isEditableInDetailView";
-        editMovieParams["movieId"] = movieId;
+    editMovieDetail = (editMovieParams) => {
         this.editMovie.emit(editMovieParams);
     }
 }

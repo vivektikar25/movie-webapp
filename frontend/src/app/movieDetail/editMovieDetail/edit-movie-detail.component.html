@@ -62,4 +62,11 @@
             <input type="text" class="form-control" [(ngModel)]="selectedMovieDetail.original_language"/>
         </div>
     </div>
+    <div class="col-md-12" style="height: 130px;">
+        <span><h5>Overview:</h5></span>
+        <textarea class="form-control" rows="4" [(ngModel)]="selectedMovieDetail.overview"></textarea>   
+    </div>
+    <div class="col-md-12">
+        <button type="button" class="btn btn-primary" style="margin-top:10px;" (click)="saveMovieChanges()">Save</button>
+    </div>
 </div>
