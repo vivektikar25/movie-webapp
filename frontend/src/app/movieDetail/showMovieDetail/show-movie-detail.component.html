@@ -7,7 +7,7 @@
                 <b>Title</b>
               </div>
               <div class="text-overflow-dot">
-                Pirates of the Caribbean: The Curse of the Black Pearl
+                <span [title]="selectedMovieDetail?.title">{{selectedMovieDetail?.title}}</span>
               </div>
             </div>
         </md-card>
@@ -17,7 +17,7 @@
                 <b>Popularity</b>
               </div>
               <div class="text-overflow-dot">
-                Pirates of the Caribbean: The Curse of the Black Pearl
+                {{selectedMovieDetail?.popularity}}
               </div>
             </div>
         </md-card>
@@ -27,7 +27,7 @@
                 <b>Vote Count</b>
               </div>
               <div class="text-overflow-dot">
-                Pirates of the Caribbean: The Curse of the Black Pearl
+                {{selectedMovieDetail?.vote_count}}
               </div>
             </div>
         </md-card>
@@ -37,7 +37,7 @@
                 <b>Video</b>
               </div>
               <div class="text-overflow-dot">
-                Pirates of the Caribbean: The Curse of the Black Pearl
+                {{selectedMovieDetail?.video}}
               </div>
             </div>
         </md-card>
@@ -47,7 +47,7 @@
                 <b>Release Date</b>
               </div>
               <div class="text-overflow-dot">
-                Pirates of the Caribbean: The Curse of the Black Pearl
+                {{selectedMovieDetail?.release_date}}
               </div>
             </div>
         </md-card>
@@ -59,7 +59,7 @@
                 <b>Orignal Title</b>
               </div>
               <div class="text-overflow-dot">
-                Pirates of the Caribbean: The Curse of the Black Pearl
+                {{selectedMovieDetail?.original_title}}
               </div>
             </div>
         </md-card>
@@ -69,7 +69,7 @@
                 <b>Orignal Language</b>
               </div>
               <div class="text-overflow-dot">
-                Pirates of the Caribbean: The Curse of the Black Pearl
+                {{selectedMovieDetail?.original_language}}
               </div>
             </div>
         </md-card>
@@ -79,7 +79,7 @@
                 <b>Vote Average</b>
               </div>
               <div class="text-overflow-dot">
-                Pirates of the Caribbean: The Curse of the Black Pearl
+                {{selectedMovieDetail?.vote_average}}
               </div>
             </div>
         </md-card>
@@ -89,7 +89,7 @@
                 <b>Adult</b>
               </div>
               <div class="text-overflow-dot">
-                Pirates of the Caribbean: The Curse of the Black Pearl
+                {{selectedMovieDetail?.adult}}
               </div>
             </div>
         </md-card>

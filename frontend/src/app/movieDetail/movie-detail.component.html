@@ -8,7 +8,10 @@
                 <md-grid-tile [colspan]="1" [rowspan]="2">
                     <div class="movies-list">
                         <md-card *ngFor="let movie of movieList; let even=even;" (click)="getMovieDetail(movie.id)" class="item-list">
-                            <h4 md-line><span [class.highlight-title]="movie?.id == selectedMovieDetail?.id">{{movie.title}}</span></h4>
+                            <h4 md-line>
+                                <span [class.highlight-title]="movie?.id == selectedMovieDetail?.id">{{movie.title}}</span>
+                                <span *ngIf="movie?.isEditableInDetailView"  title="Unsaved Changes" class="glyphicon glyphicon-info-sign warning-icon"></span>
+                            </h4>
                         </md-card>
                     </div>
                 </md-grid-tile>
