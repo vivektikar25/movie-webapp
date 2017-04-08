@@ -59,4 +59,13 @@ export class MovieService {
         return movie;
     }
 
+    filterMovies = (filterBy: string, movieList: IMovie[]) => {
+        let lowerCaseFilterBy = filterBy.toLowerCase();
+        let filteredList = movieList.filter(function(movie){
+            let lowerCaseMovieTitle = movie.title.toLowerCase();
+            return lowerCaseMovieTitle.includes(lowerCaseFilterBy);
+        });
+        return filteredList;
+    }
+
 }

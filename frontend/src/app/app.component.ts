@@ -10,6 +10,8 @@ import { ToasterService } from 'angular2-toaster';
 })
 export class AppComponent implements OnInit {
   movies = []
+  filterBy: string;
+  filteredMovieList = []
   selectedMovieObject: ISelectedMovieObj = {"selectedMovieId": 0};
   currentActivatedView: string = "listView";
 
@@ -18,7 +20,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(){
     this.movieService.getMovieList()
-                     .subscribe((data) => this.movies = data);
+                     .subscribe((data) => {
+                        this.movies = data
+                        this.filteredMovieList = data});
   }
 
   showMovieDetail(payload){
@@ -50,8 +54,8 @@ export class AppComponent implements OnInit {
   editMovie = (editMovieParams) => {
     let movieId = editMovieParams.movieId;
     let editableFlagName = editMovieParams.editFlagName;
-    let movieIndex = this.movieService.getMoviesIndex(movieId, this.movies);
-    this.movies[movieIndex][editableFlagName] = true;
+    let movieIndex = this.movieService.getMoviesIndex(movieId, this.filteredMovieList);
+    this.filteredMovieList[movieIndex][editableFlagName] = true;
   }
 
   resetMoviesEditState = (updatedMovieId, moviesEditFlags) => {
@@ -68,8 +72,18 @@ export class AppComponent implements OnInit {
   }
 
   setEditFlags = (movieId) => {
-    let movieIndex = this.movieService.getMoviesIndex(movieId, this.movies);
-    this.movies[movieIndex]["isEditableInListView"] = false;
-    this.movies[movieIndex]["isEditableInDetailView"] = false;
+    let movieIndex = this.movieService.getMoviesIndex(movieId, this.filteredMovieList);
+    this.filteredMovieList[movieIndex]["isEditableInListView"] = false;
+    this.filteredMovieList[movieIndex]["isEditableInDetailView"] = false;
+  }
+
+  filterMovieList = () => {
+    let filterBy = this.filterBy;
+    if(filterBy !== ""){
+      this.filteredMovieList = this.movieService.filterMovies(filterBy, this.movies);
+    }
+    else{
+      this.filteredMovieList = this.movies;
+    }    
   }
 }

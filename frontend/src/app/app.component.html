@@ -10,17 +10,17 @@
         </div>
         <div class="search-field">
           <md-input-container>
-            <input mdInput placeholder="SEARCH" value="">
+            <input mdInput placeholder="SEARCH" value="" [(ngModel)]="filterBy" (ngModelChange)="filterMovieList()">
           </md-input-container>
         </div>
       </div>
   </md-card>
-  <movie-list [movieList]="movies" 
+  <movie-list [movieList]="filteredMovieList" 
               (showMovieDetail)="showMovieDetail($event)"
               [hidden]="currentActivatedView=='detailView'"
               (updateMovieDetail)="updateMovieDetail($event)"
               (editMovie)="editMovie($event)"></movie-list>
-  <movie-detail [movieList]="movies" 
+  <movie-detail [movieList]="filteredMovieList" 
                 [selectedMovieObject]="selectedMovieObject"
                 [hidden]="currentActivatedView=='listView'"
                 (toggleView)="toggleView()"
