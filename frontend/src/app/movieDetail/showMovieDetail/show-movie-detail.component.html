@@ -59,7 +59,7 @@
                 <b>Orignal Title</b>
               </div>
               <div class="text-overflow-dot">
-                {{selectedMovieDetail?.original_title}}
+                 <span [title]="selectedMovieDetail?.original_title">{{selectedMovieDetail?.original_title}}</span>
               </div>
             </div>
         </md-card>
@@ -105,97 +105,3 @@
       </div>
     </div>
 </div>
-
-
-
-<!--<div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Title</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values">
-    <h4><span>{{selectedMovieDetail?.title}}</span></h4>
-  </div>
-</div>
-
- <div class="col-md-12 movie-overview">
-    <span><h5>Overview:</h5></span>
-    <div>{{selectedMovieDetail?.overview}}</div>
-</div>
-<div class="col-md-12">
-    <button type="button" class="btn btn-primary" (click)="editMovie(selectedMovieDetail?.id)">Edit</button>
-</div>
-</div>-->
-
-<!--
-<div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Title</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values">
-    <h4><span>{{selectedMovieDetail?.title}}</span></h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Popularity</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.popularity}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Original Title</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.original_title}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Release Date</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.release_date}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Vote Count</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.vote_count}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Video</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.video}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>adult</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.adult}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4" ><h4>Vote Average</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.vote_average}}</h4>
-  </div>
-</div>
-<div class="col-md-12 row">
-  <div  class="col-md-4"><h4>Original Language</h4></div>
-  <div class="col-md-1"><h4>:</h4></div>
-  <div class="col-md-7 movie-detail-values" >
-    <h4>{{selectedMovieDetail?.original_language}}</h4>
-  </div>
-</div>
- <div class="col-md-12 movie-overview">
-    <span><h5>Overview:</h5></span>
-    <div>{{selectedMovieDetail?.overview}}</div>
-</div>
-<div class="col-md-12">
-    <button type="button" class="btn btn-primary" (click)="editMovie(selectedMovieDetail?.id)">Edit</button>
-</div>
-</div>-->
