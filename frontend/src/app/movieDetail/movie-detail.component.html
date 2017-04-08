@@ -15,7 +15,7 @@
                 <md-grid-tile [colspan]="3" [rowspan]="2">
                     <div class="detail-pane">
                         <div class="col-md-12">
-                            <div class="col-md-9">
+                            <div class="col-md-9 row">
                                 <div *ngIf="!selectedMovieDetail?.isEditableInDetailView">
                                     <show-movie-detail [selectedMovieDetail]="selectedMovieDetail"
                                                         (editMovieDetail)="editMovieDetail($event)"></show-movie-detail>
