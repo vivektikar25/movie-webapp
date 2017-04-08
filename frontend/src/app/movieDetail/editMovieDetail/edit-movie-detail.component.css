@@ -9,3 +9,30 @@
 .movie-title {
     margin-top: 5px;
 }
+
+.card-input {
+    color: rgba(39, 39, 144, 0.85);
+    font-size: initial;
+    width: 100%;
+    font-size: 15px;margin-top: -15px;
+}
+
+.card {
+    height: 60px;    
+    background-color:rgba(141, 130, 195, 0.31);
+    margin-bottom: 4px;
+}
+
+.overview-card{
+    background-color: rgba(141, 130, 195, 0.31);
+    margin-top: 15px;
+    width: 143%;
+}
+
+.overview-title {
+    color: rgba(39, 39, 144, 0.85);
+}
+
+.overview-title {
+    color: rgba(39, 39, 144, 0.85);
+}

@@ -22,15 +22,17 @@
 
 .poster-image {
         padding: 20px;
+         width: 255px;
+
 }
 
 .highlight-title{
-    color: #3636E8;
-    font-size: 16px;
+    color: rgba(39, 39, 144, 0.85);
+    font-size: 18px;
 }
 
 .item-list {
-        background-color:rgba(171, 156, 247, 0.56);
+        /*background-color:rgba(171, 156, 247, 0.56);*/
         cursor: pointer;
 }
 
@@ -42,7 +44,7 @@
     height: 100%;
     width: 100%;
     overflow:auto;
-    background-color: #C9C4FA;
+    background-color: #D0C8F5
 }
 
 .detail-pane {
@@ -54,3 +56,4 @@
 .detail-background {
     background-color: rgba(171, 156, 247, 0.24);
 }
+
