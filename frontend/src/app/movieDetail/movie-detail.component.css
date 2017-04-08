@@ -29,6 +29,7 @@
 
 .item-list {
     cursor: pointer;
+    font-family: fantasy;
 }
 
 .md-card{

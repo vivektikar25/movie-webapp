@@ -45,5 +45,5 @@
 
 .movie-title {
     vertical-align: middle;
-    text-align: left;
+    text-align: left !important;
 }
