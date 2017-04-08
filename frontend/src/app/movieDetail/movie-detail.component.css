@@ -6,10 +6,6 @@
     margin-top:60px;
 }
 
-.movie-title-panel {
-    margin-bottom:50px;
-}
-
 .movie-title {
     border:solid grey 2px;
     border-bottom-left-radius: 5px;
@@ -21,8 +17,8 @@
 
 
 .poster-image {
-        padding: 20px;
-         width: 255px;
+    padding: 20px;
+    width: 255px;
 
 }
 
@@ -32,8 +28,7 @@
 }
 
 .item-list {
-        /*background-color:rgba(171, 156, 247, 0.56);*/
-        cursor: pointer;
+    cursor: pointer;
 }
 
 .md-card{
