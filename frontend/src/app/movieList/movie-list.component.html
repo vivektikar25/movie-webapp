@@ -12,7 +12,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let movie of movieList;let even = even;" class="movie-list" [class.movie-list-item]="even">  
-          <td style="vertical-align: middle;text-align: left;">
+          <td class="movie-title">
               <span *ngIf="!movie.isEditableInListView" class="movie-title">{{movie.title}}</span>
               <span *ngIf="movie.isEditableInListView"><input type="text" class="form-control" [(ngModel)]="movie.title"/></span>
           </td>
@@ -26,7 +26,7 @@
           <td>
               <span>{{movie.original_language}}</span>
           </td>
-          <td class="action-list" style="vertical-align: middle;text-align: center;">
+          <td class="action-list">
               <span *ngIf="!movie.isEditableInListView" (click)="editRow(movie.id)" title="Edit"><md-icon>edit</md-icon></span>
               <span *ngIf="movie.isEditableInListView"  (click)="saveChanges(movie.id)" title="Save"><md-icon>save</md-icon></span>
               <span (click)="gotoMovieDetail(movie.id)" title="Detail"><md-icon>send</md-icon></span>

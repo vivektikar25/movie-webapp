@@ -40,3 +40,16 @@
 .overview-title {
     color: rgba(39, 39, 144, 0.85);
 }
+
+.card > div {
+    margin-top:-10px;
+}
+
+.card > div > div {
+    color: rgba(39, 39, 144, 0.85);
+    
+}
+
+.detail-background {
+    margin-top:21px;
+}

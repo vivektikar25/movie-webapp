@@ -8,6 +8,8 @@
 
 .action-list{
     color: grey;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .action-list > span{
@@ -43,4 +45,9 @@
 
 .spreadsheet-background {
     background-color: rgba(171, 156, 247, 0.24);
+}
+
+.movie-title {
+    vertical-align: middle;
+    text-align: left;
 }
