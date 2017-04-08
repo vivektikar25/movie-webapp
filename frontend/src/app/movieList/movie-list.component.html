@@ -1,9 +1,9 @@
-<div class="col-md-12">
+<div class="col-md-12 spreadsheet-background">
   <div class="col-md-12">
     <table class="table table-striped spread-sheet-view">
       <thead>
         <tr class="movie-list">
-          <th>Movie Title</th>
+          <th class="title">Movie Title</th>
           <th>Release Date</th>
           <th>Vote Count</th>
           <th>Original Language</th>
@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let movie of movieList;" class="movie-list">  
+        <tr *ngFor="let movie of movieList;let even = even;" class="movie-list" [class.movie-list-item]="even">  
           <td style="vertical-align: middle;text-align: left;">
               <span *ngIf="!movie.isEditableInListView" class="movie-title">{{movie.title}}</span>
               <span *ngIf="movie.isEditableInListView"><input type="text" class="form-control" [(ngModel)]="movie.title"/></span>

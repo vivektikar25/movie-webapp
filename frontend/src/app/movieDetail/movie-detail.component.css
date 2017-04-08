@@ -44,8 +44,12 @@
     overflow:auto;
 }
 
-.detail-pane{
+.detail-pane {
     background-color:#D0C8F5;
     height: 100%;
     width: 100%;
+}
+
+.detail-background {
+    background-color: rgba(171, 156, 247, 0.24);
 }
