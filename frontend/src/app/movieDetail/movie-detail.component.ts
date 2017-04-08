@@ -11,17 +11,24 @@ styleUrls: ['./movie-detail.component.css']
 export class MovieDetailComponent implements OnChanges{
     @Input() movieList: IMovie[];
     @Input() selectedMovieObject;
-    @Output() showMovieDetail = new EventEmitter();
-    @Output() toggleView = new EventEmitter();
+    @Output() getNewMovieDetail = new EventEmitter();
+    @Output() showMovieListView = new EventEmitter();
     @Output() updateMovieDetail = new EventEmitter();
     @Output() editMovie = new EventEmitter();
+
     selectedMovieDetail: IMovie;
     isEditable: boolean = false;
     constructor(private movieService: MovieService, 
                 private toasterService: ToasterService) { }
     
     ngOnChanges(payload): void{
-        this.selectedMovieObject = payload.selectedMovieObject? payload.selectedMovieObject.currentValue: 0;
+        if(payload.movieList){
+            this.movieList = payload.movieList.currentValue;
+        }
+        if(payload.selectedMovieObject){
+            this.selectedMovieObject = payload.selectedMovieObject.currentValue;
+        }
+
         this.getMovieDetail(this.selectedMovieObject.selectedMovieId);
     } 
     
@@ -30,15 +37,18 @@ export class MovieDetailComponent implements OnChanges{
     }
 
     getMovieDetail(selectedMovieId): void{
-        this.selectedMovieDetail = this.movieList.find(function(movie){
-            return selectedMovieId == movie.id;
-        });
-        console.log(this.selectedMovieDetail);
+        let movieIndex = this.movieService.getMoviesIndex(selectedMovieId, this.movieList);
+        if(movieIndex !== -1){
+            this.selectedMovieDetail = this.movieList[movieIndex];
+        }
+        else{
+            let firsMovieId = this.movieList[0]? this.movieList[0].id:0;
+            this.getNewMovieDetail.emit(firsMovieId);
+        }
     }
 
-    getBackToListView = (): void => this.toggleView.emit();
-        
-
+    getBackToListView = (): void => this.showMovieListView.emit();
+    
     editMovieDetail = (editMovieParams) => {
         this.editMovie.emit(editMovieParams);
     }

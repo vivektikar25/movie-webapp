@@ -27,11 +27,17 @@ export class AppComponent implements OnInit {
 
   showMovieDetail(payload){
     this.selectedMovieObject = {selectedMovieId: payload};
-    this.toggleView(); 
+    this.currentActivatedView = 'detailView';  
   }
 
-  toggleView = () => {
-    this.currentActivatedView = this.currentActivatedView == 'listView'? 'detailView': 'listView'; 
+  getMovieDetail(payload){
+    this.selectedMovieObject = {selectedMovieId: payload};
+  }
+  
+  showMovieListView = () => {
+    if(this.currentActivatedView == "detailView"){
+      this.currentActivatedView = 'listView';
+    }
   }
 
   updateMovieDetail = (updatedMovieObject) => {

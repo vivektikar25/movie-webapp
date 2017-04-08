@@ -23,7 +23,9 @@
   <movie-detail [movieList]="filteredMovieList" 
                 [selectedMovieObject]="selectedMovieObject"
                 [hidden]="currentActivatedView=='listView'"
-                (toggleView)="toggleView()"
+                (showMovieListView)="showMovieListView()"
                 (updateMovieDetail)="updateMovieDetail($event)"
-                (editMovie)="editMovie($event)"></movie-detail>
+                (editMovie)="editMovie($event)"
+                (getNewMovieDetail)="getMovieDetail($event)"></movie-detail>
 </div>
+
