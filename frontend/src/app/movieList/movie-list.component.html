@@ -1,0 +1,43 @@
+<div class="col-md-12 spreadsheet-background">
+  <div class="col-md-12 search-field">
+      <input class="form-control" placeholder="SEARCH" value="" [(ngModel)]="filterBy" (ngModelChange)="filterMovieList()">
+  </div>
+  <div class="col-md-12">
+    <table class="table table-striped spread-sheet-view">
+      <thead>
+        <tr class="movie-list">
+          <th class="title">Movie Title</th>
+          <th>Release Date</th>
+          <th>Vote Count</th>
+          <th>Original Language</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let movie of filteredMovieList; let even = even;" class="movie-list" [class.movie-list-item]="even">  
+          <td class="movie-title">
+              <span *ngIf="!movie.isEditable" class="movie-title">{{movie.title}}</span>
+              <span *ngIf="movie.isEditable"><input type="text" class="form-control" [(ngModel)]="movie.title"/></span>
+          </td>
+          <td>
+              <span *ngIf="!movie.isEditable">{{movie.release_date}}</span>
+              <span *ngIf="movie.isEditable"><input type="text" class="form-control" [(ngModel)]="movie.release_date"/></span>
+          </td>
+          <td>
+              <span>{{movie.vote_count}}</span>
+          </td>
+          <td>
+              <span>{{movie.original_language}}</span>
+          </td>
+          <td class="action-list">
+              <span *ngIf="!movie.isEditable" (click)="editMovie(movie.id)" title="Edit"><md-icon>edit</md-icon></span>
+              <span *ngIf="movie.isEditable"  (click)="saveChanges(movie.id)" title="Save"><md-icon>save</md-icon></span>
+              <span (click)="gotoMovieDetail(movie.id)" title="Detail"><md-icon>send</md-icon></span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+

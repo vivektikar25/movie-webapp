@@ -1,0 +1,55 @@
+.movie-detail-values {
+    color: rgba(39, 39, 144, 0.85); 
+}
+
+.movie-overview {
+    height: 130px;
+}
+
+.card-input {
+    color: rgba(39, 39, 144, 0.85);
+    font-size: initial;
+    width: 100%;
+    font-size: 15px;margin-top: -15px;
+}
+
+.card {
+    height: 60px;    
+    background-color:rgba(141, 130, 195, 0.31);
+    margin-bottom: 4px;
+}
+
+.text-overflow-dot {
+    display: inline-block;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden !important;
+    text-overflow: ellipsis;
+}
+
+.overview-card{
+    background-color: rgba(141, 130, 195, 0.31);
+    margin-top: 15px;
+    width: 150%;
+}
+
+.edit-button {
+    margin-top: 40px;
+}
+
+.overview-title {
+    color: rgba(39, 39, 144, 0.85);
+}
+
+.card > div {
+    margin-top:-10px;
+}
+
+.card > div > div {
+    color: rgba(39, 39, 144, 0.85);
+    
+}
+
+.detail-background {
+    margin-top:21px;
+}

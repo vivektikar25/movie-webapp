@@ -1,0 +1,58 @@
+.back-button {
+    margin:20px;
+}
+.detail-view {
+    margin:20px 0px;
+    margin-top:60px;
+}
+
+.movie-title {
+    border:solid grey 2px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    height: 574px;
+    overflow: auto;
+    background-color: rgba(154, 142, 142, 0.32);
+}
+
+
+.poster-image {
+    padding: 20px;
+    width: 255px;
+
+}
+
+.highlight-title{
+    color: rgba(39, 39, 144, 0.85);
+    font-size: 18px;
+}
+
+.item-list {
+    cursor: pointer;
+    font-family: fantasy;
+}
+
+.md-card{
+    padding: 0px;
+}
+
+.movies-list {
+    height: 100%;
+    width: 100%;
+    overflow:auto;
+    background-color: #D0C8F5
+}
+
+.detail-pane {
+    background-color:#D0C8F5;
+    height: 100%;
+    width: 100%;
+}
+
+.detail-background {
+    background-color: rgba(171, 156, 247, 0.24);
+}
+
+.warning-icon {
+    color: rgba(255, 255, 0, 0.8);
+}

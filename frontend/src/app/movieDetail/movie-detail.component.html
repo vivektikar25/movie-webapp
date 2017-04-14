@@ -1,0 +1,41 @@
+<div  class="col-md-12 detail-background">
+    Here
+    <!--<div class="col-md-12">
+        <button type="button" (click)="getBackToListView()" class="btn btn-primary pull-right back-button">Back</button>
+    </div>
+    <div  class="col-md-12" class="detail-view" *ngIf="selectedMovieDetail">
+        <md-card class="md-card">
+            <md-grid-list cols="4" rowHeight="280px">
+                <md-grid-tile [colspan]="1" [rowspan]="2">
+                    <div class="movies-list">
+                        <md-card *ngFor="let movie of movieList; let even=even;" (click)="getMovieDetail(movie.id)" class="item-list">
+                            <h4 md-line>
+                                <span [class.highlight-title]="movie?.id == selectedMovieDetail?.id">{{movie.title}}</span>
+                                <span *ngIf="movie?.isEditableInDetailView"  title="Unsaved Changes" class="glyphicon glyphicon-info-sign warning-icon"></span>
+                            </h4>
+                        </md-card>
+                    </div>
+                </md-grid-tile>
+                <md-grid-tile [colspan]="3" [rowspan]="2">
+                    <div class="detail-pane">
+                        <div class="col-md-12">
+                            <div class="col-md-9 row">
+                                <div *ngIf="!selectedMovieDetail?.isEditableInDetailView">
+                                    <show-movie-detail [selectedMovieDetail]="selectedMovieDetail"
+                                                        (editMovieDetail)="editMovieDetail($event)"></show-movie-detail>
+                                </div>
+                                <div *ngIf="selectedMovieDetail?.isEditableInDetailView">
+                                    <edit-movie-detail [selectedMovieDetail]="selectedMovieDetail"
+                                                        (saveMovieDetail)="saveMovieDetail($event)"></edit-movie-detail>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <img class="poster-image" src="http://image.tmdb.org/t/p/w185{{selectedMovieDetail?.poster_path}}"/>
+                            </div>
+                        </div>
+                    </div>
+                </md-grid-tile>
+            </md-grid-list>
+        </md-card>
+    </div>-->
+</div>

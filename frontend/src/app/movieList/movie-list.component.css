@@ -1,0 +1,67 @@
+.title {
+    text-align: left !important;
+}
+
+.action-list{
+    color: grey;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.action-list > span{
+    cursor: pointer;
+}
+.spread-sheet-view {
+    margin-top:20px;
+}
+
+.spread-sheet-view > tr {
+    height:60px;
+}
+
+.movie-list > th {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+}
+
+.movie-list {
+    height:50px;
+}
+
+.movie-list > td {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 16px;
+}
+
+.movie-list-item {
+    background-color:   rgba(171, 156, 247, 0.56) !important;
+}
+
+.spreadsheet-background {
+    background-color: rgba(171, 156, 247, 0.24);
+}
+
+.movie-title {
+    vertical-align: middle;
+    text-align: left !important;
+}
+
+.search-field{
+    display:inline;
+    float: right;
+    margin-top: 42px;
+    font-size: 50px;
+    color:#38315A;
+    width: 100%;
+}
+
+.search-field > input {
+    background-color: inherit;
+    box-shadow: none;
+    border: none;
+    font-size: inherit;
+    height: inherit;
+    text-transform: uppercase;
+}

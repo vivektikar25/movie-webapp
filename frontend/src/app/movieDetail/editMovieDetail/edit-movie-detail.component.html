@@ -1,0 +1,63 @@
+<div class="edit-movie-background">
+    <div class="col-md-12 row">
+      <div class="col-md-6">
+        <md-card class="card">
+             <md-input-container class="card-input">
+                <input mdInput placeholder="Title" [(ngModel)]="selectedMovieDetail.title" >
+             </md-input-container>
+        </md-card>
+        <md-card class="card">
+             <md-input-container class="card-input">
+                <input mdInput placeholder="Popularity" [(ngModel)]="selectedMovieDetail.popularity">
+             </md-input-container>
+        </md-card>
+        <md-card class="card">
+             <md-input-container class="card-input">
+                <input mdInput placeholder="Vote Count" [(ngModel)]="selectedMovieDetail.vote_count" >
+             </md-input-container>
+        </md-card>
+        <md-card class="card">
+            <input type="checkbox" [(ngModel)]="selectedMovieDetail.video"/>
+            <span class="param-name"><b>Video</b></span>
+        </md-card>
+        <md-card class="card">
+             <md-input-container class="card-input">
+                <input mdInput placeholder="Release Date" [(ngModel)]="selectedMovieDetail.release_date" >
+             </md-input-container>
+        </md-card>
+      </div>
+      
+      
+      
+      <div class="col-md-6">
+        <md-card class="card">
+             <md-input-container class="card-input">
+                <input mdInput placeholder="Original Title" [(ngModel)]="selectedMovieDetail.original_title" >
+             </md-input-container>
+        </md-card>
+        <md-card class="card">
+             <md-input-container class="card-input">
+                <input mdInput placeholder="Orignal Language" [(ngModel)]="selectedMovieDetail.original_language">
+             </md-input-container>
+        </md-card>
+        <md-card class="card">
+             <md-input-container class="card-input">
+                <input mdInput placeholder="Vote Average" [(ngModel)]="selectedMovieDetail.vote_average">
+             </md-input-container>
+        </md-card>
+        <md-card class="card">
+            <input type="checkbox" [(ngModel)]="selectedMovieDetail.adult"/>
+            <span class="param-name"><b>Adult</b></span>
+        </md-card>
+      </div>
+    </div>
+</div>
+<div class="col-md-12">
+    <md-card class="overview-card">
+        <span class="overview-title"><b>Overview:</b></span>
+         <textarea class="form-control" rows="4" [(ngModel)]="selectedMovieDetail.overview"></textarea>
+    </md-card>
+</div>
+<div class="col-md-12">
+        <button type="button" class="btn btn-primary save-movie-button" (click)="saveMovieChanges()">Save</button>
+</div>
