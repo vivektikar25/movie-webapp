@@ -13,7 +13,8 @@ import { MovieDetailComponent } from './movieDetail/movie-detail.component';
 import { MovieService } from './shared/movie.service';
 import { ShowMovieDetailComponent } from './movieDetail/showMovieDetail/show-movie-detail.component';
 import { EditMovieDetailComponent } from './movieDetail/editMovieDetail/edit-movie-detail.component';
-import { appRoutes } from './app.router';
+import { AppRoutingModule } from './app.routing.module';
+import { MovieDetailGuard } from './movieDetail/movie.detail.guard';
 
 @NgModule({
   declarations: [
@@ -30,11 +31,12 @@ import { appRoutes } from './app.router';
     AlertModule,
     ToasterModule,
     MaterialModule,
-    RouterModule.forRoot(appRoutes),
+    AppRoutingModule
   ],
   providers: [
     MovieService,
-    ToasterService
+    ToasterService,
+    MovieDetailGuard,
   ],
   bootstrap: [AppComponent]
 })

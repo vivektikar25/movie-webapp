@@ -6,7 +6,7 @@ import { MovieService } from './../shared/movie.service';
 @Component({
     selector: 'movie-list',
     templateUrl: './movie-list.component.html',
-    styleUrls: ['./movie-list.component.css']
+    styleUrls: ['./movie-list.component.scss']
 })
 export class MovieListComponent implements OnInit {
     movies = [];
@@ -28,7 +28,7 @@ export class MovieListComponent implements OnInit {
     };
     
     resetMovieEditFlag = (movieId: number, status: boolean): void => {
-        let movieIndex = this.movieService.getMoviesIndex(movieId, this.filteredMovieList)
+        let movieIndex = this.movieService.getMoviesIndex(movieId, this.filteredMovieList);
         this.filteredMovieList[movieIndex]["isEditable"] = status;
     }
 

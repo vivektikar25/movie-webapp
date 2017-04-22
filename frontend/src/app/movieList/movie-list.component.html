@@ -34,7 +34,7 @@
                 <md-icon>edit</md-icon>
               </span>
               <span *ngIf="movie.isEditable"  (click)="saveChanges(movie.id)" title="Save"><md-icon>save</md-icon></span>
-              <span routerLink="/detail/5" (click)="gotoMovieDetail(movie.id)" title="Detail">
+              <span routerLink="/detail/{{movie.id}}" (click)="gotoMovieDetail(movie.id)" title="Detail">
                 <md-icon>send</md-icon>
               </span>
           </td>
