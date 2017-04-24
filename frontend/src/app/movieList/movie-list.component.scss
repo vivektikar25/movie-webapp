@@ -1,6 +1,17 @@
-$color: rgba(171, 156, 247, 0.56);
+$margin: 10px;
+
+@mixin color {
+    background-color: rgba(171, 156, 247, 0.56) !important;
+}
+
+@mixin margin {
+    margin-top: $margin + 10;
+}
+
 .title {
+    
     text-align: left !important;
+    
 }
 
 .action-list{
@@ -13,7 +24,7 @@ $color: rgba(171, 156, 247, 0.56);
     cursor: pointer;
 }
 .spread-sheet-view {
-    margin-top:20px;
+    @include margin;    
 }
 
 .spread-sheet-view > tr {
@@ -37,7 +48,7 @@ $color: rgba(171, 156, 247, 0.56);
 }
 
 .movie-list-item {
-    background-color: rgba(171, 156, 247, 0.56) !important;
+    @include color;
 }
 
 .spreadsheet-background {

@@ -5,19 +5,23 @@ import { MovieDetailComponent } from './movieDetail/movie-detail.component';
 import { MovieDetailGuard } from './movieDetail/movie.detail.guard';
 
 const appRoutes: Routes = [
-    { path: 'list', component: MovieListComponent, data: {title: "Movie List"}},
-    { path: 'detail/:id',
+    { 
+      path: 'detail/:id',
       component: MovieDetailComponent, 
-      data: {
-          title: "Movie Detail"
-      },
+      data: { title: "Movie Detail" },
       resolve: {
         movieList: MovieDetailGuard
       }
     },
-    
-    { path: '', redirectTo: '/list', pathMatch: 'full'},
-    { path: '**', component: MovieListComponent }
+    { 
+        path: '', 
+        redirectTo: '/list', 
+        pathMatch: 'full'
+    },
+    { 
+        path: '**', 
+        component: MovieDetailComponent 
+    }
 ];
 
 @NgModule({

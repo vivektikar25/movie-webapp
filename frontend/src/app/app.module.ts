@@ -15,6 +15,7 @@ import { ShowMovieDetailComponent } from './movieDetail/showMovieDetail/show-mov
 import { EditMovieDetailComponent } from './movieDetail/editMovieDetail/edit-movie-detail.component';
 import { AppRoutingModule } from './app.routing.module';
 import { MovieDetailGuard } from './movieDetail/movie.detail.guard';
+import { MovieListRoutingModule } from './movieList/movie-list-routing.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { MovieDetailGuard } from './movieDetail/movie.detail.guard';
     AlertModule,
     ToasterModule,
     MaterialModule,
+    MovieListRoutingModule,
     AppRoutingModule
   ],
   providers: [
